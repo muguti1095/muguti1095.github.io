@@ -14,15 +14,13 @@
             color: #333;
         }
         header {
-            background-image: url('wordwave6.png');
-            background-size: cover;
-            background-position: center;
-            height: 300px; /* Adjust the height as needed */
+            background-color: #34495e;
+            height: 150px; /* Adjust the height as needed */
             color: #fff;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
+            padding: 0 20px;
         }
         h1 {
             font-size: 3rem;
@@ -55,19 +53,30 @@
         }
         
         .post {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 30px;
-            margin: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for background-color */
-            width: 310px; /* Set a fixed width for all posts */
-            height: 300px; /* Set a fixed height for all posts */
-            overflow: hidden; /* Hide any overflow content */
-            text-decoration: none; /* Remove underline from post links */
-            color: #333; /* Set text color for post links */
-            cursor: pointer; /* Change cursor to pointer on hover */
-        }
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for background-color */
+    width: 310px; /* Set a fixed width for all posts */
+    height: 300px; /* Set a fixed height for all posts */
+    overflow: hidden; /* Hide any overflow content */
+    text-decoration: none; /* Remove underline from post links */
+    color: #333; /* Set text color for post links */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+}
+
+.post img {
+    max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    max-height: 100%; /* Ensure the image doesn't exceed the container height */
+    height:250px;
+    width:4=300px;
+}
+
         .post:hover {
             transform: translateY(-5px);
             background-color: #e0e0e0; /* Change background color on hover */
@@ -110,87 +119,100 @@
         .search-container button:hover {
             background-color: #2c3e50;
         }
+
+        /* Logo styling */
+        .logo {
+            margin-left: 20px; /* Adjust margin as needed */
+            width: 150px; /* Adjust width as needed */
+        }
+
+        footer{
+            color:#333;
+        }
     </style>
 </head>
 <body>
     <header>
-      
+        <img src="Wordwave2.2.gif" alt="WordWave Logo" class="logo">
+        <nav>
+            <a href ="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="encouragement.html">Encouragement</a>
+        </nav>
     </header>
-    <nav>
-        <a href ="shop.html">Shop</a>
-        <a href="about.html">About</a>
-        <a href="encouragement.html">Encouragement</a>
-    </nav>
 
-   <!-- Search bar container -->
-<div class="search-container">
-    <form>
-        <input type="text" id="searchInput" placeholder="Search...">
-        <button type="button" onclick="searchPosts()">Search</button>
-    </form>
-</div>
+    <!-- Search bar container -->
+    <div class="search-container">
+        <form>
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button type="button" onclick="searchPosts()">Search</button>
+        </form>
+    </div>
 
     <div class="container">
-        <a href="man_of_God.html" class="post">
-           
+        <a href="#" class="post">
+            <img src="life.png" alt="WordWave Logo" class="logo">
         </a>
-        <a href="trust_in_God.html" class="post">
-       
-        </a>
-        <a href="gods_timing.html" class="post">
+        <a href="#" class="post">
           
         </a>
-        <a href="john.html" class="post">
+        <a href="#" class="post">
+            
+        </a>
+        <a href="#" class="post">
           
       </a>
-      <a href="disappointment.html" class="post">
+      <a href="#" class="post">
+       
+    </a>
+    <a href="#" class="post">
+       
+    </a>
+    <a href="#" class="post">
+        
+    </a>
+    <a href="#" class="post">
+       
+    </a>
+    <a href="#" class="post">
       
     </a>
-    <a href="Men_of_God_in_the_bible.html" class="post">
-      
+    <a href="#" class="post">
+       
     </a>
-    <a href="wisdom.html" class="post">
-     
+    <a href="#" class="post">
+       
     </a>
-    <a href="job.html" class="post">
+    <a href="#" class="post">
+       
+    </a>
+
     
-    </a>
-    <a href="Dont_worry.html" class="post">
-     
-    </a>
-    <a href="prayer.html" class="post">
-     
-    </a>
-    <a href="judgin.html" class="post">
-    
-    </a>
-    <a href="true worship.html" class="post">
-     
-    </a>
+
+
+
     </div>
+    <script>
+        // JavaScript function to handle search
+        function searchPosts() {
+            // Get input value and convert it to lowercase for case-insensitive search
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var posts = document.querySelectorAll('.post'); // Get all post elements
+    
+            // Loop through all posts
+            posts.forEach(function(post) {
+                // Get post title and content
+                var title = post.querySelector('h2').innerText.toLowerCase();
+                var content = post.querySelector('p').innerText.toLowerCase();
+    
+                // Check if input matches title or content of the post
+                if (title.includes(input) || content.includes(input)) {
+                    post.style.display = 'block'; // Show post if matched
+                } else {
+                    post.style.display = 'none'; // Hide post if not matched
+                }
+            });
+        }
+    </script>
 </body>
-
-<script>
-    // JavaScript function to handle search
-    function searchPosts() {
-        // Get input value and convert it to lowercase for case-insensitive search
-        var input = document.getElementById('searchInput').value.toLowerCase();
-        var posts = document.querySelectorAll('.post'); // Get all post elements
-
-        // Loop through all posts
-        posts.forEach(function(post) {
-            // Get post title and content
-            var title = post.querySelector('h2').innerText.toLowerCase();
-            var content = post.querySelector('p').innerText.toLowerCase();
-
-            // Check if input matches title or content of the post
-            if (title.includes(input) || content.includes(input)) {
-                post.style.display = 'block'; // Show post if matched
-            } else {
-                post.style.display = 'none'; // Hide post if not matched
-            }
-        });
-    }
-</script>
-
 </html>
